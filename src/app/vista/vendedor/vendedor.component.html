@@ -1,0 +1,44 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell  *matHeaderCellDef>Nombre</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.nombre}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="apellido">
+    <mat-header-cell  *matHeaderCellDef>Apellido</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.apellido}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="ci">
+    <mat-header-cell  *matHeaderCellDef>Ci</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.ci}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="codigoPostal">
+    <mat-header-cell  *matHeaderCellDef>Codigo Postal</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.codigoPostal}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="movilContacto">
+    <mat-header-cell  *matHeaderCellDef>Movil de contacto</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.movilContacto}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="pais">
+    <mat-header-cell  *matHeaderCellDef>Pais</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.pais}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="fechaContrato">
+    <mat-header-cell  *matHeaderCellDef>Fecha Contrato</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.fechaContrato}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="fechaNac">
+    <mat-header-cell  *matHeaderCellDef>Fecha de Nacimiento</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.fechaNac}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="telefonoDomicilio">
+    <mat-header-cell  *matHeaderCellDef>Telefono Domicilio</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.telefonoDomicilio}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="enlace">
+    <mat-header-cell  *matHeaderCellDef>Enlaces</mat-header-cell>
+    <mat-cell *matCellDef="let element"> <button mat-button (click) = "ver(element._id)">editar</button></mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

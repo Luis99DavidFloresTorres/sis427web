@@ -1,0 +1,44 @@
+<div fxLayoutAlign= "center center">
+  <mat-form-field fxFlex="60%">
+    <input matInput placeholder="buscador" (keyup)="hacerFiltro($any($event.target).value)">
+  </mat-form-field>
+</div>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="propietario">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>Propietario</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.propietario}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="direccion">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>Direccion</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.direccion}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="superficie">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>Superficie</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.superficie}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="detalles.lavadero.posicion">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>Lavadero posicion</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.detalles.lavadero.posicion}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="detalles.lavadero.posesion">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>Lavadero posesion</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.detalles.lavadero.posesion}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="servicio">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>Servicio</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.servicio}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="detalles.nroHabitaciones">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>nroHabitaciones</mat-header-cell>
+    <mat-cell *matCellDef="let element">  {{element.detalles.nroHabitaciones}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="enlace">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>Enlaces</mat-header-cell>
+    <mat-cell *matCellDef="let element"> <button mat-button (click) = "ver(element._id)">editar</button></mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<button mat-fab color="warn" id="agregar" (click)="abrirDialog()">
+  <mat-icon>add</mat-icon>
+</button>
